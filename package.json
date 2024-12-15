@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm run \"/dev:/\"",
+    "dev:browser-sync": "browser-sync start --server --port 4000 --files \"*.html\" \"css/*.css\" \"js/*.js\" --open \"external\" --browser \"firefox\" \"google chrome\" \"safari\"",
+    "dev:sass": "sass --watch sass:css --style=compressed",
+    "install-web-fonts": "node tools/install-web-fonts.js",
+    "validate-html": "node tools/w3c-html-validator.js"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "w3c-html-validator": "^1.8.2"
+  },
+  "engines": {
+    "npm": "0.0.0",
+    "pnpm": ">=9.14.4"
+  }
+}
