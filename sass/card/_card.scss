@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+/** @section Card */
+.card {
+    line-height: normal;
+    color: var(--primary);
+    background: var(--secondary-background);
+    box-sizing: border-box;
+    max-inline-size: var(--card-size);
+    padding: var(--card-padding);
+    border-radius: var(--card-radius);
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--card-header-gap);
+        margin-block-end: var(--card-header-margin);
+        p {
+            a {
+                display: block;
+                border-radius: var(--card-image-radius);
+                overflow: hidden;
+                position: relative;
+                &::before,
+                &::after {
+                    position: absolute;
+                    transition: 300ms ease-in;
+                    content: "";
+                }
+                &::before {
+                    background: initial;
+                    inset: 0;
+                }
+                &::after {
+                    background: url("images/sprites.svg") no-repeat left -35px;
+                    width: 48px;
+                    aspect-ratio: 1;
+                    transform: translate(-50%, -75%);
+                    opacity: 0;
+                    inset-block-start: 50%;
+                    inset-inline-start: 50%;
+                }
+                &:hover,
+                &:focus {
+                    &::before {
+                        background: var(--quaternary-background);
+                    }
+                    &::after {
+                        transform: translate(-50%, -50%);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    footer,
+    .price,
+    .time {
+        font-size: var(--info-size);
+    }
+    footer {
+        padding-block-start: var(--card-footer-padding);
+        margin-block-start: var(--card-header-margin);
+        border-block-start: 1px solid var(--tertiary-background);
+        img {
+            margin-inline-end: var(--card-footer-gap);
+            border: 1px solid var(--secondary);
+            border-radius: 50%;
+        }
+    }
+    a {
+        color: var(--secondary);
+        text-decoration: none;
+        transition: color 300ms ease-in;
+        &:hover,
+        &:focus {
+            color: var(--tertiary);
+        }
+    }
+    .title {
+        font-size: var(--title-size);
+        order: 1;
+    }
+    &-body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--card-gap);
+        > p:not(.price, .time) {
+            font-size: var(--text-size);
+            font-weight: 300;
+            line-height: var(--text-line-height);
+            grid-column: span 2;
+        }
+    }
+    .price,
+    .time {
+        &::before {
+            background: url("images/sprites.svg") no-repeat;
+            vertical-align: middle;
+            display: inline-block;
+            height: 18px;
+            content: "";
+        }
+    }
+    .price {
+        font-weight: 600;
+        color: var(--tertiary);
+        &::before {
+            width: 11px;
+            margin-inline-end: 6px;
+        }
+    }
+    .time {
+        justify-self: end;
+        &::before {
+            background-position-y: -18px;
+            width: 17px;
+            margin-inline-end: 8px;
+        }
+    }
+}

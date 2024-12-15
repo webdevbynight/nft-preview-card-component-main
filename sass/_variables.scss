@@ -1,10 +1,15 @@
 @charset "utf-8";
 @use "./base/functions" as *;
+@use "./base/mixins" as *;
 
 // Variables
 :root {
     // Font and typo
     --font: Outfit, sans-serif;
+    --title-size: #{px2rem(22)};
+    --text-size: #{px2rem(18)};
+    --text-line-height: call(26/18);
+    --info-size: #{px2rem(15)};
 
     // Colours
     --primary: #8bacd9;
@@ -13,7 +18,24 @@
     --primary-background: #0d192c;
     --secondary-background: #15263f;
     --tertiary-background: #2e405a;
+    --quaternary-background: rgba(0 255 248 / .53);
 
     // Margins, paddings, borders, gaps and shadows
     --card-size: #{px2rem(350)};
+    --card-padding: #{px2rem(24)};
+    --card-gap: #{px2rem(16)};
+    --card-radius: #{px2rem(15)};
+    --card-image-radius: #{px2rem(8)};
+    --card-header-gap: #{px2rem(24)};
+    --card-header-margin: #{px2rem(12)};
+    --card-footer-margin: #{px2rem(16)};
+    --card-footer-padding: #{px2rem(16)};
+    --card-footer-gap: #{px2rem(16)};
+    @include css-media-queries($from-breakpoint: standalone-card) {
+        --info-size: #{px2rem(16)};
+        --card-padding: #{px2rem(24)} #{px2rem(24)} #{px2rem(32)};
+        --card-gap: #{px2rem(24)};
+        --card-header-margin: #{px2rem(16)};
+        --card-footer-margin: #{px2rem(24)};
+    }
 }

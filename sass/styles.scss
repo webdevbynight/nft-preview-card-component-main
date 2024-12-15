@@ -11,7 +11,7 @@
 
 @use "./base/mixins" with (
     $media-queries-breakpoints: (
-        // Add custom breakpoints here if default ones do not fit the project
+        standalone-card: 398
     )
 );
 @use "./variables";
@@ -19,3 +19,4 @@
 @use "./base/print";
 @use "./typo/font-face";
 @use "./layout/layout";
+@use "./card/card";
