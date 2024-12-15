@@ -1,0 +1,19 @@
+@charset "utf-8";
+@use "./base/functions" as *;
+
+// Variables
+:root {
+    // Font and typo
+    --font: Outfit, sans-serif;
+
+    // Colours
+    --primary: #8bacd9;
+    --secondary: white;
+    --tertiary: #00fff8;
+    --primary-background: #0d192c;
+    --secondary-background: #15263f;
+    --tertiary-background: #2e405a;
+
+    // Margins, paddings, borders, gaps and shadows
+    --card-size: #{px2rem(350)};
+}

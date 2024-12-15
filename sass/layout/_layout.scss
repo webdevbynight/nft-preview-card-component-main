@@ -1,0 +1,25 @@
+@charset "utf-8";
+@use "../base/mixins" as *;
+
+/** @section General layout */
+body {
+    font-family: var(--font);
+    color: var(--secondary);
+    background: var(--primary-background);
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100dvb;
+}
+main {
+    display: grid;
+    place-items: center;
+    flex: 1;
+    padding: 0 1.5rem;
+}
+.attribution {
+    font-size: .6875rem;
+    text-align: center;
+    a {
+        color: inherit;
+    }
+}
